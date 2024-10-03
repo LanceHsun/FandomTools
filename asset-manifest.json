@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/LanceHsun/FandomTools/static/css/main.6e934bd2.css",
+    "main.js": "/LanceHsun/FandomTools/static/js/main.1eb6be57.js",
+    "static/js/453.b016e0f7.chunk.js": "/LanceHsun/FandomTools/static/js/453.b016e0f7.chunk.js",
+    "index.html": "/LanceHsun/FandomTools/index.html",
+    "main.6e934bd2.css.map": "/LanceHsun/FandomTools/static/css/main.6e934bd2.css.map",
+    "main.1eb6be57.js.map": "/LanceHsun/FandomTools/static/js/main.1eb6be57.js.map",
+    "453.b016e0f7.chunk.js.map": "/LanceHsun/FandomTools/static/js/453.b016e0f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e934bd2.css",
+    "static/js/main.1eb6be57.js"
+  ]
+}
