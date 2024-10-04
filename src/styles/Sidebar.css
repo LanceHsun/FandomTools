@@ -1,6 +1,7 @@
 .sidebar {
     width: 250px;
-    background-color: #2d2d2d;
+    background-color: var(--purple-light);
+    color: var(--text-dark);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -22,6 +23,7 @@
   .sidebar nav ul {
     list-style-type: none;
     padding: 0;
+    color: var(--blue-dark);
   }
   
   .sidebar nav ul li {
@@ -31,6 +33,7 @@
   
   .bottom-links {
     margin-top: auto;
+    color: var(--blue-dark);
   }
   
   .bottom-links a {

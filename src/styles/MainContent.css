@@ -1,8 +1,21 @@
+:root {
+  --purple-light: #AC8DAF;
+  --purple-dark: #8a6d8f;
+  --blue-light: #8DA1AC;
+  --blue-dark: #6D828A;
+  --background-light: #ffffff;
+  --background-medium: #f5f5f7;
+  --text-dark: #1d1d1f;
+  --text-light: #ffffff;
+  --text-disabled: #86868b;
+  --border-color: #d2d2d7;
+}
+
 .main-content {
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
-  background-color: #ffffff;
+  background-color: var(--background-light);
 }
 
 .section {
@@ -10,7 +23,7 @@
 }
 
 .section h2 {
-  color: #1d1d1f;
+  color: var(--text-dark);
   margin-bottom: 15px;
   font-size: 28px;
 }
@@ -20,9 +33,9 @@
 }
 
 .tag {
-  background-color: #f5f5f7;
-  color: #1d1d1f;
-  border: 1px solid #d2d2d7;
+  background-color: var(--background-medium);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
   padding: 5px 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -32,19 +45,18 @@
 }
 
 .tag.selected {
-  background-color: #0071e3;
-  color: #ffffff;
-  border-color: #0071e3;
+  background-color: var(--blue-light);
+  color: var(--text-light);
+  border-color: var(--blue-light);
 }
 
-/* 新增：为 "墓碑" 标签设置特殊样式 */
 .tag[data-tag="墓碑"] {
-  background-color: #AC8DAF;
-  color: #ffffff;
+  background-color: var(--purple-light);
+  color: var(--text-light);
 }
 
 .tag[data-tag="墓碑"].selected {
-  background-color: #8a6d8f;
+  background-color: var(--purple-dark);
 }
 
 .items-grid {
@@ -54,35 +66,36 @@
 }
 
 .item {
-  background-color: #f5f5f7;
+  background-color: var(--background-medium);
   padding: 20px;
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  color: #1d1d1f;
+  color: var(--text-dark);
   text-align: center;
-  border: 1px solid #d2d2d7;
+  border: 1px solid var(--border-color);
 }
 
 .item:hover {
-  background-color: #e8e8ed;
+  background-color: var(--blue-light);
+  color: var(--text-light);
 }
 
-/* 更新：修改没有链接的按钮样式 */
 .item.disabled {
-  color: #86868b;  /* 灰色文字 */
+  color: var(--text-disabled);
   cursor: not-allowed;
 }
 
 .item.disabled:hover {
-  background-color: #f5f5f7;  /* 保持与其他按钮相同的背景色 */
+  background-color: var(--background-medium);
+  color: var(--text-disabled);
 }
 
 .visit-counter {
   text-align: center;
   font-size: 14px;
-  color: #86868b;
+  color: var(--text-disabled);
   margin-top: 30px;
   padding: 10px;
-  border-top: 1px solid #d2d2d7;
+  border-top: 1px solid var(--border-color);
 }

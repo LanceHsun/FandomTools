@@ -10,18 +10,19 @@ function MainContent({ selectedSection }) {
     {
       title: '饭桌',
       items: [
-        { name: '飞鸽博客 ', url: 'https://feigeblog.com', tags: ['新家', '社交'] },
+        { name: 'Lofter', url: 'https://www.lofter.com', tags: ['好多人'] },
+        { name: 'Archive of Our Own', url: 'https://archiveofourown.org', tags: ['安心的家', '梯子'] },
         { name: '微博', url: 'https://weibo.com', tags: ['社交', '吃肉'] },
         { name: 'QQ', url: 'https://qq.com', tags: ['社交', '吃肉'] },
+        { name: '飞鸽博客 ', url: 'https://feigeblog.com', tags: ['新家', '社交'] },
         { name: '小红书', url: 'https://www.xiaohongshu.com', tags: ['新家'] },
-        { name: 'Lofter', url: 'https://www.lofter.com', tags: ['好多人'] },
-        { name: '抖音', url: 'https://www.douyin.com', tags: ['视频', ] },
+        { name: '随缘居', url: 'http://mtslash.me/forum.php', tags: ['欧美圈', ] },
         { name: 'Twitter', url: 'https://twitter.com', tags: ['吃肉', '梯子'] },
         { name: 'Pixiv(P站)', url: 'https://www.pixiv.net', tags: ['图'] },
         { name: 'Tumblr', url: 'https://www.tumblr.com', tags: ['社交'] },
-        { name: 'Archive of Our Own (AO3)', url: 'https://archiveofourown.org', tags: ['安心的家', '梯子'] },
-        { name: 'Popiku', url: 'https://poipiku.com', tags: ['艺术', '插画'] },
-        { name: 'Instagram', url: 'https://www.instagram.com', tags: ['社交', '图片'] },
+        
+        { name: 'Popiku', url: 'https://poipiku.com', tags: ['图'] },
+        { name: 'Instagram', url: 'https://www.instagram.com', tags: ['社交'] },
         { name: 'WLAND', url: 'https://hellowland.com', tags: ['独立站'] },
         { name: '半次元 ', url: '', tags: ['墓碑'] },
         { name: '白熊阅读 ', url: '', tags: ['墓碑'] },
@@ -29,21 +30,20 @@ function MainContent({ selectedSection }) {
         { name: 'WordPress', url: 'https://www.wordpress.com', tags: ['博客', '建站'] },
         { name: '废文网', url: 'https://www.feiawen.com', tags: [] },
         { name: 'Asianfanfics', url: 'https://www.asianfanfics.com', tags: [] },
-        { name: '爱发电 (Afdian)', url: 'https://www.afdian.net', tags: ['众筹', '吃肉'] },
-        { name: 'Derpibooru', url: 'https://derpibooru.org', tags: ['图片', '同人'] },
-        { name: 'Fanfiction.net', url: 'https://www.fanfiction.net', tags: ['同人', '文学'] },
-        { name: 'Wattpad', url: 'https://www.wattpad.com', tags: ['文学', '社交'] },
-        { name: '萤火圈', url: 'https://www.pgyer.com/FireFly', tags: ['社交', '同人'] },
+        { name: '爱发电', url: 'https://www.afdian.net', tags: ['吃肉'] },
+        { name: 'Derpibooru', url: 'https://derpibooru.org', tags: [] },
+        { name: 'Fanfiction.net', url: 'https://www.fanfiction.net', tags: [] },
+        { name: 'Wattpad', url: 'https://www.wattpad.com', tags: [] },
+        { name: '萤火圈', url: 'https://www.pgyer.com/FireFly', tags: ['社交', ] },
         { name: 'Cpp', url: 'https://cp.allcpp.cn', tags: [] },
-        { name: 'Popo', url: 'https://www.popo.tw', tags: ['文学', '出版'] },
+        { name: 'Popo', url: 'https://www.popo.tw', tags: ['出版'] },
         { name: 'LiveJournal', url: 'https://www.livejournal.com', tags: [] },
         { name: 'Nitter (推特前端)', url: 'https://nitter.bgme.bid', tags: [] },
-        { name: 'Postype (韩国网站)', url: 'https://www.postype.com', tags: [] },
+        { name: 'Postype (韩)', url: 'https://www.postype.com', tags: [] },
         { name: 'Pictbland (日本BL站)', url: 'https://pictbland.net', tags: ['BL'] },
         { name: 'Pictgland (GL站)', url: 'https://pictgland.net', tags: ['GL'] },
         { name: 'Privatter', url: 'https://privatter.net', tags: [] },
-        { name: 'Poipiku (插画网站)', url: 'https://www.poipiku.com', tags: ['艺术', '插画'] },
-        { name: 'Episode', url: 'https://www.episode.cc', tags: ['游戏', '互动故事'] },
+        { name: 'Poipiku (图)', url: 'https://www.poipiku.com', tags: ['图'] },
         { name: 'Waterfall', url: 'https://waterfall.slashtw.space', tags: [] },
 
       ]
@@ -52,11 +52,12 @@ function MainContent({ selectedSection }) {
     {
       title: '厨具',
       items: [
-        { name: '石墨文档 (Shimo Docs)', url: 'https://shimo.im', tags: ['文档', '协作'] },
-        { name: 'flomo', url: 'https://flomoapp.com', tags: ['笔记', '思维'] },
-        { name: '口袋写作 (Pocket Writing)', url: 'https://www.kdwrite.cn/#/', tags: ['写作', '创作'] },
-        { name: '备忘录', url: '', tags: ['笔记', '便签'] },
-        { name: 'WriteFreely', url: 'https://writefreely.org', tags: ['博客', '写作'] }
+        { name: '石墨文档', url: 'https://shimo.im', tags: ['文档', '文图'] },
+        { name: 'Flomo', url: 'https://flomoapp.com', tags: ['灵感'] },
+        { name: '口袋写作', url: 'https://www.kdwrite.cn/#/', tags: ['写作'] },
+        { name: '备忘录', url: '', tags: ['写作', '同步'] },
+        { name: 'WriteFreely', url: 'https://writefreely.org', tags: ['博客', '写作'] },
+        { name: 'Notion', url: 'https://www.notion.so/', tags: ['存文', '发文'] },
       ]
     }
   ];
@@ -97,10 +98,27 @@ function MainContent({ selectedSection }) {
   };
 
   useEffect(() => {
-    // 获取访问量
-    fetch('https://api.countapi.xyz/hit/your-fan-website-url/visits')
+    const namespace = 'fandom-tools'; // 为您的网站选择一个唯一的命名空间
+    const key = 'visits';
+
+    // 首先尝试获取当前计数
+    fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
       .then(response => response.json())
-      .then(data => setVisitCount(data.value))
+      .then(data => {
+        if (data.value !== null) {
+          // 如果计数存在，增加计数
+          fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+            .then(response => response.json())
+            .then(data => setVisitCount(data.value))
+            .catch(error => console.error('Error updating visit count:', error));
+        } else {
+          // 如果计数不存在，创建并初始化为1
+          fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=1`)
+            .then(response => response.json())
+            .then(data => setVisitCount(data.value))
+            .catch(error => console.error('Error creating visit count:', error));
+        }
+      })
       .catch(error => console.error('Error fetching visit count:', error));
   }, []);
 

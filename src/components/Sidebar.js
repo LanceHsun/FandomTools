@@ -7,6 +7,9 @@ function Sidebar({ onSectionSelect }) {
   return (
     <div className="sidebar">
       <h1>饭和饭的一切</h1>
+      <div className="bookmark-reminder">
+        防走丢→点网址右侧⭐加入收藏夹
+      </div>
       <nav>
         <ul>
           {sections.map((section, index) => (
