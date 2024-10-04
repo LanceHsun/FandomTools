@@ -1,10 +1,43 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '../styles/MainContent.css';
 
 function MainContent({ selectedSection }) {
   const [selectedTags, setSelectedTags] = useState({ '饭桌': ['all'], '厨具': ['all'] });
   const sectionRefs = useRef({});
-  const [visitCount, setVisitCount] = useState(0);
+  const [visitCount, setVisitCount] = useState('加载中...');
+  const [error, setError] = useState(null);
+
+  const fetchVisitCount = useCallback(async () => {
+    const namespace = 'lancehsun.github.io';
+    const key = 'fandom-tools-visits';
+    
+    try {
+      const getResponse = await fetch(`https://api.countapi.xyz/get/${namespace}/${key}`);
+      const getData = await getResponse.json();
+      
+      console.log('Initial get response:', getData);
+
+      if (getData.value !== null) {
+        const hitResponse = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+        const hitData = await hitResponse.json();
+        console.log('Hit response:', hitData);
+        setVisitCount(hitData.value);
+      } else {
+        const createResponse = await fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=1`);
+        const createData = await createResponse.json();
+        console.log('Create response:', createData);
+        setVisitCount(createData.value);
+      }
+    } catch (error) {
+      console.error('Error with visit count:', error);
+      setError('无法加载访问计数');
+      setVisitCount('--');
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchVisitCount();
+  }, [fetchVisitCount]);
 
   const sections = [
     {
@@ -24,9 +57,6 @@ function MainContent({ selectedSection }) {
         { name: 'Popiku', url: 'https://poipiku.com', tags: ['图'] },
         { name: 'Instagram', url: 'https://www.instagram.com', tags: ['社交'] },
         { name: 'WLAND', url: 'https://hellowland.com', tags: ['独立站'] },
-        { name: '半次元 ', url: '', tags: ['墓碑'] },
-        { name: '白熊阅读 ', url: '', tags: ['墓碑'] },
-        { name: 'FanLib', url: '', tags: ['墓碑'] },
         { name: 'WordPress', url: 'https://www.wordpress.com', tags: ['博客', '建站'] },
         { name: '废文网', url: 'https://www.feiawen.com', tags: [] },
         { name: 'Asianfanfics', url: 'https://www.asianfanfics.com', tags: [] },
@@ -45,6 +75,9 @@ function MainContent({ selectedSection }) {
         { name: 'Privatter', url: 'https://privatter.net', tags: [] },
         { name: 'Poipiku (图)', url: 'https://www.poipiku.com', tags: ['图'] },
         { name: 'Waterfall', url: 'https://waterfall.slashtw.space', tags: [] },
+        { name: '半次元 ', url: '', tags: ['墓碑'] },
+        { name: '白熊阅读 ', url: '', tags: ['墓碑'] },
+        { name: 'FanLib', url: '', tags: ['墓碑'] },
 
       ]
 
@@ -97,31 +130,6 @@ function MainContent({ selectedSection }) {
     return item.tags.some(tag => selectedTags[section].includes(tag));
   };
 
-  useEffect(() => {
-    const namespace = 'fandom-tools'; // 为您的网站选择一个唯一的命名空间
-    const key = 'visits';
-
-    // 首先尝试获取当前计数
-    fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data.value !== null) {
-          // 如果计数存在，增加计数
-          fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-            .then(response => response.json())
-            .then(data => setVisitCount(data.value))
-            .catch(error => console.error('Error updating visit count:', error));
-        } else {
-          // 如果计数不存在，创建并初始化为1
-          fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=1`)
-            .then(response => response.json())
-            .then(data => setVisitCount(data.value))
-            .catch(error => console.error('Error creating visit count:', error));
-        }
-      })
-      .catch(error => console.error('Error fetching visit count:', error));
-  }, []);
-
 
   return (
     <div className="main-content">
@@ -155,6 +163,7 @@ function MainContent({ selectedSection }) {
       ))}
       <div className="visit-counter">
         访问量：{visitCount}
+        {error && <span className="error-message">{error}</span>}
       </div>
     </div>
   );
