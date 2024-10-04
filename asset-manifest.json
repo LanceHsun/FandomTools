@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/LanceHsun.github.io/FandomTools/static/css/main.6e934bd2.css",
-    "main.js": "/LanceHsun.github.io/FandomTools/static/js/main.f911d520.js",
-    "static/js/453.b016e0f7.chunk.js": "/LanceHsun.github.io/FandomTools/static/js/453.b016e0f7.chunk.js",
-    "index.html": "/LanceHsun.github.io/FandomTools/index.html",
-    "main.6e934bd2.css.map": "/LanceHsun.github.io/FandomTools/static/css/main.6e934bd2.css.map",
-    "main.f911d520.js.map": "/LanceHsun.github.io/FandomTools/static/js/main.f911d520.js.map",
-    "453.b016e0f7.chunk.js.map": "/LanceHsun.github.io/FandomTools/static/js/453.b016e0f7.chunk.js.map"
+    "main.css": "/FandomTools/static/css/main.6e934bd2.css",
+    "main.js": "/FandomTools/static/js/main.bd3b953c.js",
+    "static/js/453.b016e0f7.chunk.js": "/FandomTools/static/js/453.b016e0f7.chunk.js",
+    "index.html": "/FandomTools/index.html",
+    "main.6e934bd2.css.map": "/FandomTools/static/css/main.6e934bd2.css.map",
+    "main.bd3b953c.js.map": "/FandomTools/static/js/main.bd3b953c.js.map",
+    "453.b016e0f7.chunk.js.map": "/FandomTools/static/js/453.b016e0f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6e934bd2.css",
-    "static/js/main.f911d520.js"
+    "static/js/main.bd3b953c.js"
   ]
 }
