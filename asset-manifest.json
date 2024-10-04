@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/FandomTools/static/css/main.6e934bd2.css",
-    "main.js": "/FandomTools/static/js/main.bd3b953c.js",
+    "main.css": "/FandomTools/static/css/main.14164910.css",
+    "main.js": "/FandomTools/static/js/main.fc440abf.js",
     "static/js/453.b016e0f7.chunk.js": "/FandomTools/static/js/453.b016e0f7.chunk.js",
     "index.html": "/FandomTools/index.html",
-    "main.6e934bd2.css.map": "/FandomTools/static/css/main.6e934bd2.css.map",
-    "main.bd3b953c.js.map": "/FandomTools/static/js/main.bd3b953c.js.map",
+    "main.14164910.css.map": "/FandomTools/static/css/main.14164910.css.map",
+    "main.fc440abf.js.map": "/FandomTools/static/js/main.fc440abf.js.map",
     "453.b016e0f7.chunk.js.map": "/FandomTools/static/js/453.b016e0f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e934bd2.css",
-    "static/js/main.bd3b953c.js"
+    "static/css/main.14164910.css",
+    "static/js/main.fc440abf.js"
   ]
 }
