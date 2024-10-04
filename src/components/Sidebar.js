@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Sidebar.css';
 
 function Sidebar({ onSectionSelect }) {
-  const sections = ['饭桌', '厨具'];
+  const sections = ['饭桌', '厨具', '梯子','+'];
 
   return (
     <div className="sidebar">
@@ -18,11 +18,7 @@ function Sidebar({ onSectionSelect }) {
         </ul>
       </nav>
       <div className="bottom-links">
-        <a href="https://pome.vip/eatmeat" target="_blank" rel="noopener noreferrer">我有建议！提名新网站</a>
-        <a href="#">About</a>
-        <a href="#">Settings</a>
-        <a href="#">Mailing list</a>
-        <a href="#">Discord</a>
+        <a href="https://pome.vip/eatmeat" target="_blank" rel="noopener noreferrer">作者信箱←建议走这里</a>
         <a href="https://github.com/LanceHsun/FandomTools" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>

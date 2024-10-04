@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '../styles/MainContent.css';
 
 function MainContent({ selectedSection }) {
-  const [selectedTags, setSelectedTags] = useState({ '饭桌': ['all'], '厨具': ['all'] });
+  const [selectedTags, setSelectedTags] = useState({ '饭桌': ['all'], '厨具': ['all'], '梯子': ['all']});
   const sectionRefs = useRef({});
   const [visitCount, setVisitCount] = useState('加载中...');
   const [error, setError] = useState(null);
@@ -78,7 +78,7 @@ function MainContent({ selectedSection }) {
         { name: '半次元 ', url: '', tags: ['墓碑'] },
         { name: '白熊阅读 ', url: '', tags: ['墓碑'] },
         { name: 'FanLib', url: '', tags: ['墓碑'] },
-
+        { name: '+', url: 'https://pome.vip/eatmeat', tags: [] },
       ]
 
     },
@@ -91,13 +91,25 @@ function MainContent({ selectedSection }) {
         { name: '备忘录', url: '', tags: ['写作', '同步'] },
         { name: 'WriteFreely', url: 'https://writefreely.org', tags: ['博客', '写作'] },
         { name: 'Notion', url: 'https://www.notion.so/', tags: ['存文', '发文'] },
+        { name: '+', url: 'https://pome.vip/eatmeat', tags: [] },
       ]
+    },
+    {
+      title: '梯子',
+      items: [
+        { name: '+', url: 'https://pome.vip/eatmeat', tags: [] },
+      ]
+    },
+    {
+      title: '+',
+      items: [] // 这个部分没有项目
     }
   ];
 
   const allTags = {
     '饭桌': ['all', ...new Set(sections.find(s => s.title === '饭桌').items.flatMap(item => item.tags))],
-    '厨具': ['all', ...new Set(sections.find(s => s.title === '厨具').items.flatMap(item => item.tags))]
+    '厨具': ['all', ...new Set(sections.find(s => s.title === '厨具').items.flatMap(item => item.tags))],
+    '梯子': ['all', ...new Set(sections.find(s => s.title === '梯子').items.flatMap(item => item.tags))]
   };
 
   useEffect(() => {
@@ -132,10 +144,12 @@ function MainContent({ selectedSection }) {
 
 
   return (
-    <div className="main-content">
+<div className="main-content">
       {sections.map((section, index) => (
         <div key={index} className="section" ref={el => sectionRefs.current[section.title] = el}>
           <h2>{section.title}</h2>
+          {section.title !== '+' ? (
+            <>
           <div className="tag-selector">
             {allTags[section.title].map(tag => (
               <button
@@ -159,6 +173,15 @@ function MainContent({ selectedSection }) {
               </div>
             ))}
           </div>
+          </>
+          ) : (
+            <div className="add-section">
+              <p>想要添加新板块吗？</p>
+              <a href="https://pome.vip/eatmeat" target="_blank" rel="noopener noreferrer" className="add-link">
+                塞一条建议
+              </a>
+            </div>
+          )}
         </div>
       ))}
       <div className="visit-counter">
