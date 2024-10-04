@@ -1,56 +1,26 @@
-import React, { useState } from 'react';
-import { Search } from 'lucide-react';
+import React from 'react';
 import '../styles/Sidebar.css';
-import SearchResults from './SearchResults';
 
-function Sidebar() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [showResults, setShowResults] = useState(false);
-
-  const handleSearchFocus = () => {
-    setShowResults(true);
-  };
-
-  const handleSearchBlur = () => {
-    setTimeout(() => setShowResults(false), 200);
-  };
+function Sidebar({ onSectionSelect }) {
+  const sections = ['饭桌', '厨具'];
 
   return (
     <div className="sidebar">
-      <h1>Husker</h1>
-      <div className="search-container">
-        <Search className="search-icon" />
-        <input
-          type="text"
-          placeholder="Search"
-          className="search-input"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onFocus={handleSearchFocus}
-          onBlur={handleSearchBlur}
-        />
-        {showResults && <SearchResults searchTerm={searchTerm} />}
-      </div>
+      <h1>饭和饭的一切</h1>
       <nav>
         <ul>
-          <li>Apps</li>
-          <li>General</li>
-          <li>Courses</li>
-          <li>Husky Card</li>
-          <li>Financial</li>
-          <li>Housing</li>
-          <li>Miscellaneous</li>
-          <li>Social</li>
-          <li>Resources</li>
+          {sections.map((section, index) => (
+            <li key={index} onClick={() => onSectionSelect(section)}>{section}</li>
+          ))}
         </ul>
       </nav>
       <div className="bottom-links">
-        <a href="#">Contribute</a>
+        <a href="https://pome.vip/eatmeat" target="_blank" rel="noopener noreferrer">我有建议！提名新网站</a>
         <a href="#">About</a>
         <a href="#">Settings</a>
         <a href="#">Mailing list</a>
         <a href="#">Discord</a>
-        <a href="#">GitHub</a>
+        <a href="https://github.com/LanceHsun/FandomTools" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   );
